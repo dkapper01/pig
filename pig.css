@@ -6,17 +6,6 @@
 div {
 	/*border: 1px solid red; */
 }
-.new-game-btn {
-	border: none;
-	background-color: #74cc66;
-	color: white;
-	font-size: 20px;
-	height: 40px;
-	width: 152px; 
-	position: absolute;
-	top: 20px;
-	left: 431px; 
-}
 .game-area {
 	height: 600px; 
 	width: 1000px;
@@ -30,13 +19,39 @@ div {
 	text-align: center;
 
 }
+button {
+	border: none;
+	background-color: #74cc66;
+	color: white;
+	cursor: pointer;
+	height: 50px;
+	width: 152px; 
+}
+.hold-btn {
+	font-size: 20px;
+	position: absolute;
+	top: 480px;
+	left: 425px; 
+}
+.roll-btn {
+	font-size: 20px;
+	position: absolute;
+	top: 420px;
+	left: 425px; 
+}
+.new-game-btn {
+	font-size: 20px;
+	position: absolute;
+	top: 20px;
+	left: 425px; 
+}
 .set-winning-score {
 	border: 1px solid #74cc66;
-	height: 40px; 
+	height: 45px; 
 	width: 200px; 
 	text-align: center;
 	position: absolute;
-	top: 500px; 
+	top: 545px; 
 	left: 400px; 
 }
 .current-text {
@@ -80,17 +95,17 @@ div {
 }
 .dice0 {
 	border: 1px solid black; 
-	width: 100px;
-	height: 100px; 
+	width: 150px;
+	height: 150px; 
 	position: absolute;
-	top: 300px;
-	left: 450px;
+	top: 85px;
+	left: 425px;
 }
 .dice1 {
 	border: 1px solid black; 
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	position: absolute;
-	top: 195px; 
-	left: 450px;
+	top: 250px; 
+	left: 425px;
 }
