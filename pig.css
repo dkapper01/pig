@@ -30,6 +30,15 @@ div {
 	text-align: center;
 
 }
+.set-winning-score {
+	border: 1px solid #74cc66;
+	height: 40px; 
+	width: 200px; 
+	text-align: center;
+	position: absolute;
+	top: 500px; 
+	left: 400px; 
+}
 .current-text {
 	margin-top: 75px; 
 }
