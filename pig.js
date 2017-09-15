@@ -1,6 +1,7 @@
 $('.roll-btn').click(function() {
   $( ".toggle" ).effect( "shake" );
 });
+
 var dice0 = 0; 
 var dice1 = 0;
 
