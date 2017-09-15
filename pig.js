@@ -1,1 +1,4 @@
-console.log("Dropdox is working"); 
+$('.roll-btn').click(function() {
+  $( ".toggle" ).effect( "shake" );
+});
+
