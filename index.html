@@ -2,23 +2,24 @@
   <head>
   	<title>Pig</title>
   	<link rel="stylesheet" type="text/css" href="pig.css">
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  </head>
  <body>
   	<div class="container">
 		 <div class="game-area">
-			 <div class="player-0-panel active-player">
-				<div class="player-0-name">Player 1</div>	
-				<div class="score-box" id="player-0-score">52</div>	 
-				<div class="current-box">	
-					<div class="player-0-round-score">6</div>
-				</div>
+			 <div class="player-0-panel panels active-player">
+				<div class="player-names">Player 1</div>	
+				<div class="score-box" id="player-0-score">52</div>	
+				<div class="current-text">current</div> 
+				<div class="current-box player-0-current">6</div>
 			 </div>
-			 <div class="player-1-panel">
-				<div class="player-1-name">Player 2</div>
+			 <div class="player-1-panel panels">
+				<div class="player-names">Player 2</div>
+
 				<div class="score-box" id="player-1-score">45</div>
-				<div class="current-box">	
-					<div class="player-1-round-score">8</div>
-				</div>
+
+				<div class="current-text">current</div>
+				<div class="current-box" id="player-1-current">8</div>
 			</div>
 
 			<button type="button" class="new-game-btn">New Game</button>
@@ -26,7 +27,7 @@
 			<img src="img/dice-5.png" class="dice0">
 			<img src="img/dice-3.png" class="dice1">
 
-			<input type="text" placeholder="Winning Score?" name="winning-score" class="winning-score" id="user_score" onkeypress="getInput(event)">
+			<input type="text" placeholder="Set winning score" name="set-winning-score" class="set-winning-score" id="user_score" onkeypress="getInput(event)">
 
 			<button type="button" class="roll-btn">Roll</button>
 			<button type="button" class="hold-btn">Hold</button>
