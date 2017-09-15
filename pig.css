@@ -1,0 +1,28 @@
+.container {
+	border: 1px solid red; 
+	height: 1000px; 
+	width: 1000px; 
+	margin: 0px auto; 
+}
+.game-area {
+	border: 1px solid blue; 
+	height: 600px; 
+	width: 900px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+
+}
+.dice0 {
+	border: 1px solid black; 
+	width: 100px;
+	height: 100px; 
+}
+.dice1 {
+	border: 1px solid black; 
+	width: 100px;
+	height: 100px;
+}

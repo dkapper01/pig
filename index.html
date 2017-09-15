@@ -1,16 +1,11 @@
 <!DOCTYPE html>
   <head>
   	<title>Pig</title>
-			<link rel="stylesheet" type="text/css" href="../stylesheet/style.css">
-			<link rel="stylesheet" type="text/css" href="../stylesheet/dice-game-style.css">
-			<link rel="stylesheet" type="text/css" href="stylesheet/navigation.css">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  	<link rel="stylesheet" type="text/css" href="pig.css">
  </head>
  <body>
   	<div class="container">
-		<div class="dice-title">Pig</div>
-		 <div class="game">
+		 <div class="game-area">
 			 <div class="player-0-panel active-player">
 				<div class="player-0-name">Player 1</div>	
 				<div class="score-box" id="player-0-score">52</div>	 
@@ -35,12 +30,8 @@
 
 			<button type="button" class="roll-btn">Roll</button>
 			<button type="button" class="hold-btn">Hold</button>
-			
-			<div class="dice-rules">
-				<p>The goal is to be the first player to get to 100 or whatever you set the winning score to be. If you roll a 1 your current score will go to 0 and it will be the next players turn.  If you roll two 6's your total score will go to 0. </p>
-			</div>
 		</div>
 	</div>
-	<script src="javascript/dice-game-app.js" type="text/javascript"></script>
+	<script src="pig.js" type="text/javascript"></script>
   </body>
 </html>
