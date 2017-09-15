@@ -97,13 +97,13 @@ button:active {
 	background-color: #67d0d0;
 	height: 100%;
 	width: 50%;
-	float: right;
+	float: left;
 }
 .player-1-panel {
 	background-color: #66cc91	;
 	height: 100%;
 	width: 50%;
-	float: left;
+	float: right;
 }
 .dice0 {
 	border: 1px solid #999; 
