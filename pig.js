@@ -1,6 +1,7 @@
 $('.roll-btn').click(function() {
   $( ".toggle" ).effect( "shake" );
 });
+
 var dice0, dice1, currentScore, score, activePlayer; 
 init(); 
 
@@ -40,11 +41,13 @@ document.querySelector('.hold-btn').addEventListener("click", function() {
 		if(activePlayer == 1) {
 			document.querySelector('.name-1').innerHTML = "Winner"; 
 			document.querySelector('.name-0').innerHTML = "Loser"; 
-			init(); 
+			// init();
+			alert('Player 2 Wins!!!') 
 		} else {
 			document.querySelector('.name-0').innerHTML = "Winner"; 
 			document.querySelector('.name-1').innerHTML = "Loser"; 
-			init(); 
+			// init(); 
+			alert('Player 1 Wins!!!')
 		}
 	}
 
@@ -72,6 +75,8 @@ function init() {
  	currentScore = 0; 
  	score = [0,0]; 
  	activePlayer = 0; 
+ 	document.querySelector('.name-0').innerHTML = "Player 1"; 
+ 	document.querySelector('.name-1').innerHTML = "Player 2"; 
 	document.getElementById('player-0-current').textContent = "0"; 
 	document.getElementById('player-1-current').textContent = "0"; 
 	document.getElementById('player-0-score').textContent = "0"; 
