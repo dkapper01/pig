@@ -10,6 +10,9 @@ document.getElementById('user-choice').addEventListener('keydown', function(e) {
 	if(e.keyCode == 13) {
 		x = document.getElementById('user-choice').value;
 	 	document.querySelector('.current-text').innerHTML = x; 
+
+	 	document.getElementById('user-choice').style.display = "none"; 
+	 	document.querySelector('.first-one').style.display = "inline";
 	}
 });
 
@@ -98,6 +101,7 @@ function init() {
  	activePlayer = 0; 
  	gameOn = true; 
  	winner = false; 
+ 	document.querySelector('.first-one').style.display = 'none'; 
  	document.querySelector('.name-0').innerHTML = "Player 1"; 
  	document.querySelector('.name-1').innerHTML = "Player 2"; 
  	document.querySelector('.name-1').classList.remove('active');

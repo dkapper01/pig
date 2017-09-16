@@ -19,6 +19,14 @@ div {
 	text-align: center;
 
 }
+.first-one {
+	color: red;
+	position: absolute;
+	top: 545px; 
+	left: 400px;  
+	font-size: 20px; 
+	z-index: 1; 
+}
 .active {
 	color: red; 
 }
