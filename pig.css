@@ -20,7 +20,10 @@ div {
 
 }
 .first-one {
+	/*border: 1px solid red; */
 	color: red;
+	display: inline-block;
+	font-weight: bold;
 	position: absolute;
 	top: 545px; 
 	left: 400px;  

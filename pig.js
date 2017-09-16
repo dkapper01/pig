@@ -9,7 +9,7 @@ var x;
 document.getElementById('user-choice').addEventListener('keydown', function(e) {
 	if(e.keyCode == 13) {
 		x = document.getElementById('user-choice').value;
-	 	document.querySelector('.current-text').innerHTML = x; 
+	 	document.querySelector('.first-one').innerHTML = 'The first one to ' + x + ' wins'; 
 
 	 	document.getElementById('user-choice').style.display = "none"; 
 	 	document.querySelector('.first-one').style.display = "inline";
@@ -110,4 +110,5 @@ function init() {
 	document.getElementById('player-1-current').textContent = "0"; 
 	document.getElementById('player-0-score').textContent = "0"; 
 	document.getElementById('player-1-score').textContent = "0";  
+	document.getElementById('user-choice').style.display = "inline-block";
 }
