@@ -39,8 +39,9 @@ document.querySelector('.hold-btn').addEventListener("click", function() {
 	score[activePlayer] += currentScore;  
 
 	if(score[activePlayer] >= 20) {
-		
+		document.querySelector('.name-' + activePlayer).innerHTML = "Winner"; 
 	}
+
 	document.getElementById('player-' + activePlayer + '-score').textContent = score[activePlayer]; 
 	currentScore = 0; 
 	document.getElementById('player-' + activePlayer + '-current').textContent = "0";
