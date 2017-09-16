@@ -1,12 +1,10 @@
 $('.roll-btn').click(function() {
   $( ".toggle" ).effect( "shake" );
 });
+var dice0, dice1, currentScore, score, activePlayer; 
+init(); 
 
-var dice0 = 0; 
-var dice1 = 0;
-var currentScore = 0; 
-var score = [0,0]; 
-var activePlayer = 0; 
+
 
 document.querySelector(".roll-btn").addEventListener("click", function() {
 
@@ -22,7 +20,6 @@ document.querySelector(".roll-btn").addEventListener("click", function() {
 			score[activePlayer] = 0; 
 			document.getElementById('player-' + activePlayer + '-current').textContent = "0"; 
 			document.getElementById('player-' + activePlayer + '-score').textContent = "0"
-			// back to start
 			nextPlayer(); 
 		} else {
 			currentScore += dice0 + dice1;
@@ -40,14 +37,14 @@ document.querySelector('.hold-btn').addEventListener("click", function() {
 	score[activePlayer] += currentScore;  
 
 	if(score[activePlayer] >= 20) {
-		
-
 		if(activePlayer == 1) {
 			document.querySelector('.name-1').innerHTML = "Winner"; 
 			document.querySelector('.name-0').innerHTML = "Loser"; 
+			init(); 
 		} else {
-			document.querySelector('.name-0').innerHTML = "winner"; 
+			document.querySelector('.name-0').innerHTML = "Winner"; 
 			document.querySelector('.name-1').innerHTML = "Loser"; 
+			init(); 
 		}
 	}
 
@@ -59,6 +56,8 @@ document.querySelector('.hold-btn').addEventListener("click", function() {
 
 });
 
+document.querySelector('.new-game-btn').addEventListener('click', init);
+
 function nextPlayer() {
 	if(activePlayer === 0) {
 		activePlayer = 1; 
@@ -67,8 +66,14 @@ function nextPlayer() {
 	}
 }
 
-
-document.getElementById('player-0-current').textContent = "0"; 
-document.getElementById('player-1-current').textContent = "0"; 
-document.getElementById('player-0-score').textContent = "0"; 
-document.getElementById('player-1-score').textContent = "0"; 
+function init() {
+	dice0 = 0; 
+ 	dice1 = 0;
+ 	currentScore = 0; 
+ 	score = [0,0]; 
+ 	activePlayer = 0; 
+	document.getElementById('player-0-current').textContent = "0"; 
+	document.getElementById('player-1-current').textContent = "0"; 
+	document.getElementById('player-0-score').textContent = "0"; 
+	document.getElementById('player-1-score').textContent = "0";  
+}
