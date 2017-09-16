@@ -2,7 +2,7 @@ $('.roll-btn').click(function() {
   $( ".toggle" ).effect( "shake" );
 });
 
-var dice0, dice1, currentScore, score, activePlayer, gameOn; 
+var dice0, dice1, currentScore, score, activePlayer, gameOn, winner; 
 init(); 
 
 
@@ -42,25 +42,28 @@ if(gameOn) {
 		if(activePlayer == 1) {
 			document.querySelector('.name-1').innerHTML = "Winner"; 
 			document.querySelector('.name-0').innerHTML = "Loser";  
-			alert('Player 2 Wins!!!');
 			document.querySelector('.name-1').classList.remove('active');
+			alert('Player 2 Wins!!!');
+			winner = true; 
 			gameOn = false;
-			return 0; 
 		} else {
 			document.querySelector('.name-0').innerHTML = "Winner"; 
 			alert('Player 1 Wins!!!');
 			document.querySelector('.name-1').classList.remove('active');
  			document.querySelector('.name-0').classList.remove('active'); 
+ 			alert('Player 1 Wins!!!');
+ 			winner = true; 
 			gameOn = false;
-			return 0; 
 		}
 	}
 
-	document.getElementById('player-' + activePlayer + '-score').textContent = score[activePlayer]; 
-	currentScore = 0; 
-	document.getElementById('player-' + activePlayer + '-current').textContent = "0";
+		document.getElementById('player-' + activePlayer + '-score').textContent = score[activePlayer]; 
+		currentScore = 0; 
+		document.getElementById('player-' + activePlayer + '-current').textContent = "0";
 
-	nextPlayer();
+		if(!winner) {
+			nextPlayer(); 
+		}
 	}
 });
 
@@ -85,6 +88,7 @@ function init() {
  	score = [0,0]; 
  	activePlayer = 0; 
  	gameOn = true; 
+ 	winner = false; 
  	document.querySelector('.name-0').innerHTML = "Player 1"; 
  	document.querySelector('.name-1').innerHTML = "Player 2"; 
  	document.querySelector('.name-1').classList.remove('active');
