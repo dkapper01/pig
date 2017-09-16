@@ -5,7 +5,8 @@ $('.roll-btn').click(function() {
 var dice0 = 0; 
 var dice1 = 0;
 var currentScore = 0; 
-var score = 0; 
+var score = [0,0]; 
+var activePlayer = 0; 
 
 document.querySelector(".roll-btn").addEventListener("click", function() {
 
@@ -15,24 +16,39 @@ document.querySelector(".roll-btn").addEventListener("click", function() {
 	document.querySelector('.dice0').src = 'img/dice-' + dice0 + '.png';  
 	document.querySelector('.dice1').src = 'img/dice-' + dice1 + '.png'; 
 
-	currentScore += dice0 + dice1; 
-
-	document.getElementById('player-0-current').textContent = currentScore; 
-
-
+	if(dice0 != 1 || dice1 != 1) {
+		if(dice0 === 6 && dice1 === 6) {
+			score[activePlayer] = 0; 
+			currentScore = 0; 
+			document.getElementById('player-' + activePlayer + '-current').textContent = "0"; 
+			document.getElementById('player-' + activePlayer + '-score').textContent = "0"; 
+			nextPlayer(); 
+		} else {
+			currentScore += dice0 + dice1;
+			document.getElementById('player-' + activePlayer + '-current').textContent = currentScore; 	
+		} else {
+			activePlayer
+		}
 });
 
 document.querySelector('.hold-btn').addEventListener("click", function() {
-	score = currentScore;  
+	score[activePlayer] += currentScore;  
 
-	document.getElementById('player-0-score').textContent = score; 
+	document.getElementById('player-' + activePlayer + '-score').textContent = score[activePlayer]; 
 	currentScore = 0; 
-	document.getElementById('player-0-current').textContent = currentScore;
+	document.getElementById('player-' + activePlayer + '-current').textContent = "0";
 
-	//next player  
-	
+	nextPlayer();
 
 });
+
+function nextPlayer() {
+	if(activePlayer === 0) {
+		activePlayer = 1; 
+	} else {
+		activePlayer = 0; 
+	}
+}
 
 
 document.getElementById('player-0-current').textContent = "0"; 
