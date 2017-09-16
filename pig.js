@@ -22,6 +22,7 @@ document.querySelector(".roll-btn").addEventListener("click", function() {
 			score[activePlayer] = 0; 
 			document.getElementById('player-' + activePlayer + '-current').textContent = "0"; 
 			document.getElementById('player-' + activePlayer + '-score').textContent = "0"
+			// back to start
 			nextPlayer(); 
 		} else {
 			currentScore += dice0 + dice1;
@@ -39,7 +40,15 @@ document.querySelector('.hold-btn').addEventListener("click", function() {
 	score[activePlayer] += currentScore;  
 
 	if(score[activePlayer] >= 20) {
-		document.querySelector('.name-' + activePlayer).innerHTML = "Winner"; 
+		
+
+		if(activePlayer == 1) {
+			document.querySelector('.name-1').innerHTML = "Winner"; 
+			document.querySelector('.name-0').innerHTML = "Loser"; 
+		} else {
+			document.querySelector('.name-0').innerHTML = "winner"; 
+			document.querySelector('.name-1').innerHTML = "Loser"; 
+		}
 	}
 
 	document.getElementById('player-' + activePlayer + '-score').textContent = score[activePlayer]; 
