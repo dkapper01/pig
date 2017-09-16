@@ -17,8 +17,16 @@ document.querySelector(".roll-btn").addEventListener("click", function() {
 	document.querySelector('.dice1').src = 'img/dice-' + dice1 + '.png'; 
 
 	if(dice0 !== 1 && dice1 !== 1) {
-		currentScore += dice0 + dice1;
-		document.getElementById('player-' + activePlayer + '-current').textContent = currentScore;
+		if(dice0 === 6 && dice1 === 6) {
+			currentScore = 0; 
+			score[activePlayer] = 0; 
+			document.getElementById('player-' + activePlayer + '-current').textContent = "0"; 
+			document.getElementById('player-' + activePlayer + '-score').textContent = "0"
+			nextPlayer(); 
+		} else {
+			currentScore += dice0 + dice1;
+			document.getElementById('player-' + activePlayer + '-current').textContent = currentScore;
+		}
 	} else {
 		currentScore = 0 
 		document.getElementById('player-' + activePlayer + "-current").textContent = "0"; 
@@ -27,21 +35,12 @@ document.querySelector(".roll-btn").addEventListener("click", function() {
 });
 
 
-// if(dice0 === 6 && dice1 === 6) {
-// 			score[activePlayer] = 0; 
-// 			currentScore = 0; 
-// 			document.getElementById('player-' + activePlayer + '-current').textContent = "0"; 
-// 			document.getElementById('player-' + activePlayer + '-score').textContent = "0"; 
-// 			nextPlayer(); 
-// 		} else {
-// 			currentScore += dice0 + dice1;
-// 			document.getElementById('player-' + activePlayer + '-current').textContent = currentScore; 	
-// 		} else {
-// 			currentScore = 0; 
-
 document.querySelector('.hold-btn').addEventListener("click", function() {
 	score[activePlayer] += currentScore;  
 
+	if(score[activePlayer] >= 20) {
+		
+	}
 	document.getElementById('player-' + activePlayer + '-score').textContent = score[activePlayer]; 
 	currentScore = 0; 
 	document.getElementById('player-' + activePlayer + '-current').textContent = "0";
