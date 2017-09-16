@@ -4,8 +4,14 @@ $('.roll-btn').click(function() {
 
 var dice0, dice1, currentScore, score, activePlayer, gameOn, winner; 
 init(); 
+var x; 
 
-
+document.getElementById('user-choice').addEventListener('keydown', function(e) {
+	if(e.keyCode == 13) {
+		x = document.getElementById('user-choice').value;
+	 	document.querySelector('.current-text').innerHTML = x; 
+	}
+});
 
 document.querySelector(".roll-btn").addEventListener("click", function() {
 if(gameOn) {
@@ -43,17 +49,20 @@ if(gameOn) {
 			document.querySelector('.name-1').innerHTML = "Winner"; 
 			document.querySelector('.name-0').innerHTML = "Loser";  
 			document.querySelector('.name-1').classList.remove('active');
-			alert('Player 2 Wins!!!');
+			document.querySelector('.dice0').style.display = 'none';   
+			document.querySelector('.dice1').style.display = 'none'; 
 			winner = true; 
 			gameOn = false;
+			alert('Player 2 Wins!!!');
 		} else {
 			document.querySelector('.name-0').innerHTML = "Winner"; 
-			alert('Player 1 Wins!!!');
 			document.querySelector('.name-1').classList.remove('active');
  			document.querySelector('.name-0').classList.remove('active'); 
- 			alert('Player 1 Wins!!!');
+ 			document.querySelector('.dice0').style.display = 'none';   
+			document.querySelector('.dice1').style.display = 'none'; 
  			winner = true; 
 			gameOn = false;
+			alert('Player 1 Wins!!!');
 		}
 	}
 
