@@ -47,7 +47,7 @@ if(gameOn) {
 document.querySelector('.hold-btn').addEventListener("click", function() {
 if(gameOn) {
 	score[activePlayer] += currentScore;  
-	if(score[activePlayer] >= 10) {
+	if(score[activePlayer] >= 100) {
 		if(activePlayer == 1) {
 			document.querySelector('.name-1').innerHTML = "Winner"; 
 			document.querySelector('.name-0').innerHTML = "Loser";  
