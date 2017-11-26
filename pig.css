@@ -1,10 +1,19 @@
 .container {
-	height: 1000px; 
+	height: auto; 
 	width: 1000px; 
 	margin: 0px auto; 
 }
 div {
 	/*border: 1px solid red; */
+}
+.rules {
+	margin-top: 630px; 
+}
+.rules h3 {
+	text-align: center;
+}
+.rules p {
+	text-align: center; 
 }
 .game-area {
 	height: 600px; 
