@@ -4,7 +4,7 @@ $('.roll-btn').click(function() {
 
 var dice0, dice1, currentScore, score, activePlayer, gameOn, winner; 
 init(); 
-var x; 
+var playToScore = 100;
 
 var test = document.getElementById("user-choice").value; 
 console.log(test); 
@@ -12,8 +12,8 @@ console.log(test);
 
 document.getElementById('user-choice').addEventListener('keydown', function(e) {
 	if(e.keyCode == 13) {
-		x = document.getElementById('user-choice').value;
-	 	document.querySelector('.first-one').innerHTML = 'The first one to ' + x + ' wins'; 
+		playToScore = document.getElementById('user-choice').value;
+	 	document.querySelector('.first-one').innerHTML = 'The first one to ' + playToScore + ' wins'; 
 
 	 	document.getElementById('user-choice').style.display = "none"; 
 	 	document.querySelector('.first-one').style.display = "inline";
@@ -51,7 +51,7 @@ if(gameOn) {
 document.querySelector('.hold-btn').addEventListener("click", function() {
 if(gameOn) {
 	score[activePlayer] += currentScore;  
-	if(score[activePlayer] >= x) {
+	if(score[activePlayer] >= playToScore) {
 		if(activePlayer == 1) {
 			document.querySelector('.name-1').innerHTML = "Winner"; 
 			document.querySelector('.name-0').innerHTML = "Loser";  
