@@ -12,6 +12,9 @@ div {
 .rules h3 {
 	text-align: center;
 }
+.rules a {
+	text-decoration: none; 
+}
 .rules p {
 	text-align: center; 
 }
