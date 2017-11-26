@@ -6,6 +6,10 @@ var dice0, dice1, currentScore, score, activePlayer, gameOn, winner;
 init(); 
 var x; 
 
+var test = document.getElementById("user-choice").value; 
+console.log(test); 
+
+
 document.getElementById('user-choice').addEventListener('keydown', function(e) {
 	if(e.keyCode == 13) {
 		x = document.getElementById('user-choice').value;
@@ -43,11 +47,11 @@ if(gameOn) {
 	}
 });
 
-
+// var playToScore = 100; 
 document.querySelector('.hold-btn').addEventListener("click", function() {
 if(gameOn) {
 	score[activePlayer] += currentScore;  
-	if(score[activePlayer] >= 100) {
+	if(score[activePlayer] >= x) {
 		if(activePlayer == 1) {
 			document.querySelector('.name-1').innerHTML = "Winner"; 
 			document.querySelector('.name-0').innerHTML = "Loser";  
